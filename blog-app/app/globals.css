@@ -2,26 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .container {
+    @apply flex min-h-screen flex-1 flex-col items-center;
   }
-}
+  .topbar {
+    @apply fixed top-0 z-30 flex w-full items-center justify-between  px-7 py-3;
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .bottombar {
+    @apply fixed bottom-0 z-10 w-full rounded-t-3xl  p-4 backdrop-blur-lg xs:px-7 md:hidden;
+  }
 }
